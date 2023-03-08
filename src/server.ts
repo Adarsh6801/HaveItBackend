@@ -14,7 +14,7 @@ app.get('/api/foods',(req,res)=>{
 })
 app.get("/api/foods/search/:searchTerm",(req,res)=>{
     const searchTerm=req.params.searchTerm;
-    console.log(searchTerm,'searchTerm');
+    
     
     const foods= sample_foods.filter(food=>food.name.toLowerCase().includes(searchTerm.toLowerCase()))
     res.send(foods);
@@ -32,7 +32,7 @@ app.get("/api/foods/tag/:tagName",(req,res)=>{
 
 app.get('/api/foods/:foodId',(req,res)=>{
     const foodId=req.params.foodId;
-    console.log(foodId,"hiiii");
+   
     const food=sample_foods.find(food=>food.id==foodId);
     res.send(food)
 })
